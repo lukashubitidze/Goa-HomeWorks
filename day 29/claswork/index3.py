@@ -8,5 +8,5 @@ def find_max(numbers):
     return max_number
 
 # ტესტი
-num_list = [3, 7, 2, 10, 5]
+num_list = [3, 7, 2, 10, 5, 15]
 print("უმაღლესი რიცხვი არის:", find_max(num_list))
