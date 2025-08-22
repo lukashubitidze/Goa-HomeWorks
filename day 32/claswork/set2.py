@@ -2,7 +2,7 @@ fruit1 = {"apple","wattermelon","melon"}
 fruit2 = {"melon", "greep", "mango"}
 
 # გაერთიანება
-print(a.union(fruit1,fruit2))
+print(fruit1.union(fruit2))
 
 #თანაკვეთა
 print(fruit1 & fruit2)

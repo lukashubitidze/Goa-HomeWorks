@@ -1,0 +1,17 @@
+.div1{
+    padding: 20px; color: aqua;
+    border: 10px; color: blueviolet;
+    margin: 20px;
+}
+
+.div2{
+    padding: 15px; color: rgb(255, 0, 191);
+    border: 10px; color: rgb(7, 156, 224);
+    margin: 25px;
+}
+
+.div3{
+    padding: 30px; color: rgb(255, 60, 0);
+    border: 15px; color: rgb(110, 235, 7);
+    margin: 30px;
+}
