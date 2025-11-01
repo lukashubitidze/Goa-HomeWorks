@@ -1,0 +1,18 @@
+.middle{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    z-index: 1;
+}
+.right{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    z-index: 2;
+}
+.left{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    z-index: 3;
+}
