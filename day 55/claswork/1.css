@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 100px);
+  gap: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  height: 300px;
+}
+
+.box {
+  background: aqua;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.tall {
+  height: 120px;
+  background: rgb(0, 102, 255);
+}
+
+.medium {
+  height: 80px;
+  background: #1c7ed6;
+}
+
+.start {
+  align-items: start;
+}
+
+.center {
+  align-items: center;
+}
+
+.end {
+  align-items: end;
+}

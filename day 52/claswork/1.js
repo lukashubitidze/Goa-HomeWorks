@@ -1,7 +1,4 @@
-let name = number(input('შეიყვანე სახელი'))
+// მაგალითად
 
-if ( name === 'გიორგი'){
-    console.log('ნაცნიბია')
-} else {
-    console.log('არ ვიცნობ ამ პიროვნებას')
-}
+//  3 == '3' --> true
+//  3 === '3' --> false
