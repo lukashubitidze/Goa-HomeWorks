@@ -9,13 +9,13 @@
 // 1)
 
 let fruits = ['apple', 'banana']
-fruits.push['kivi']
+fruits.push('kivi')
 console.log(fruits)
 
 // 2)
 
 let nums = [1, 2, 3, 4, 5]
-nums.length()
+console.log(nums.length)
 
 // 3)
 
@@ -23,7 +23,7 @@ let nums2 = [1, 2, 3, 4, 5]
 console.log(nums2.pop())
 
 // 4)
-textArray['email', 'pasword']
+textArray['emaill', 'paswordd']
 textArray.push('text');
 
 console.log("მასივში არის " + textArray.length + " ელემენტი.");
