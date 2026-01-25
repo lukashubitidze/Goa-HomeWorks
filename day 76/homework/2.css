@@ -1,0 +1,23 @@
+/* 2)CSS ცვლადები – ფერი და კიდეები
+პირობა:
+შექმენით ორი ყუთი (div) ზომით 150px x 150px.
+შექმენით ცვლადები:
+--main-color – ყუთის ფონისთვის
+--border-radius – ყუთის კიდეებისთვის
+გამოიყენეთ ცვლადები ორივე ყუთზე, ისე რომ მათი ფერი
+ან კიდეები მარტივად შეიცვალოს ცვლადის შეცვლით. */
+
+
+:root {
+    --main-color: cornflowerblue;
+    --border-radius: 20px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: var(--main-color);
+    border-radius: var(--border-radius);
+    margin: 20px;
+    display: inline-block;
+}

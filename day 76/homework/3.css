@@ -1,0 +1,17 @@
+/* 3)შერეული – სამკუთხედი + ცვლადი
+პირობა:
+შექმენით ყუთი (div) ზომით 200px x 200px.
+შექმენით ცვლადი --shape-color ფონისთვის
+გამოიყენეთ clip-path, რომ ყუთი იყოს სამკუთხედი */
+
+
+:root {
+    --shape-color: tomato;
+}
+
+.triangle {
+    width: 200px;
+    height: 200px;
+    background-color: var(--shape-color);
+    clip-path: polygon(50% 0%,0% 100%,100% 100%);
+}
