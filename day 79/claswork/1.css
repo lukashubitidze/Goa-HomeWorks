@@ -1,0 +1,12 @@
+.text-with-dot {
+  font-size: 18px;
+  color: #333;
+}
+
+.text-with-dot::before {
+  content: "●";
+  color: blue;       
+  margin-right: 8px; 
+  font-size: 20px;
+  vertical-align: middle;
+}

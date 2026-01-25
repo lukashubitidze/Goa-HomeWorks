@@ -1,0 +1,5 @@
+.text-with-new::after {
+  content: " NEW";
+  color: red;
+  font-weight: bold;
+}
