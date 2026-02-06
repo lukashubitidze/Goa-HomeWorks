@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.admin {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2f4050;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: #1ab394;
+  opacity: 1;
+}
+
+/* Main content */
+.content {
+  flex: 1;
+  background: #f3f3f4;
+  padding: 20px;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.actions .btn {
+  border: none;
+  padding: 8px 14px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.green { background: #1ab394; }
+.blue { background: #1c84c6; }
+.red { background: #ed5565; }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+thead {
+  background: #f9f9f9;
+}
+
+.selected {
+  background: #fff9d6;
+}
+
+/* Tags */
+.tag {
+  padding: 3px 8px;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 4px;
+}

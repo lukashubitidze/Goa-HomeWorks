@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="7.css">
+</head>
+<body>
+
+<div class="admin">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2 class="logo">Open Admin</h2>
+    <ul class="menu">
+      <li>Dashboard</li>
+      <li class="active">Pages</li>
+      <li>Admin</li>
+      <li>Helpers</li>
+      <li>Media manager</li>
+      <li>Config</li>
+      <li>Api tester</li>
+      <li>Page Designer</li>
+    </ul>
+  </aside>
+
+  <!-- Main -->
+  <main class="content">
+    
+    <!-- Header -->
+    <header class="topbar">
+      <h3>Page list</h3>
+      <div class="actions">
+        <button class="btn green">+ New</button>
+        <button class="btn blue">Filter</button>
+        <button class="btn red">Report</button>
+      </div>
+    </header>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Tags</th>
+          <th>Star</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Homepage</td>
+          <td>2022-05-25</td>
+          <td><span class="tag green">new</span></td>
+          <td>⭐</td>
+        </tr>
+        <tr class="selected">
+          <td>2</td>
+          <td>Blog</td>
+          <td>2022-05-25</td>
+          <td><span class="tag green">new</span></td>
+          <td>⭐</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Contact</td>
+          <td>2022-05-25</td>
+          <td><span class="tag blue">special</span></td>
+          <td>⭐</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </main>
+</div>
+
+</body>
+</html>
