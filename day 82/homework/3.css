@@ -38,5 +38,5 @@ body {
 }
 
 .hover-button:hover span {
-    transform: translateX(10px); 
+    transform: translateX(20px); 
 }
