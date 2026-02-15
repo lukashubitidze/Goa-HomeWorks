@@ -1,0 +1,49 @@
+/* 12) გააკეთე ღილაკი, რომელსაც hover-ზე შიგნით
+მოძრავი ფონური ეფექტი ექნება (ფონის ბლოკი transform-ით გადაადგილდეს). */
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* ღილაკის სტილი */
+.moving-bg-btn {
+    position: relative;
+    overflow: hidden; 
+    padding: 15px 40px;
+    font-size: 18px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ფონური ბლოკი */
+.moving-bg-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* თავდაპირველად ბლოკი ღილაკის მარჯვნივაა */
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    transform: translateX(0);
+    transition: transform 0.5s ease;
+}
+
+/* hover */
+.moving-bg-btn:hover::before {
+    transform: translateX(50%);
+}
+
+.moving-bg-btn span {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,42 @@
+/* 7) შექმენი ღილაკი, რომელსაც hover-ზე გამოუჩნდება ქვედა ხაზის ანიმაცია (ხაზი transform-ით გაიზარდოს). */
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* ღილაკი */
+.underline-btn {
+    position: relative;
+    background: red;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #333;
+}
+
+.underline-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #3498db;
+    
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.3s ease;
+}
+
+/* hover */
+.underline-btn:hover::after {
+    transform: scaleX(1); 
+}

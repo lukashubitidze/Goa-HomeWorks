@@ -1,0 +1,32 @@
+/* 9) შექმენი ელემენტი, რომელიც hover-ზე 
+დიაგონალურად გადაიწევს (translateX და translateY ერთად გამოიყენე). */
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* ელემენტი */
+.diagonal-box {
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+/* hover */
+.diagonal-box:hover {
+    transform: translateX(20px) translateY(-20px);
+}

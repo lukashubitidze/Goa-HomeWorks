@@ -1,0 +1,32 @@
+/* 1)  შექმენი ბარათი, რომელიც hover-ზე გაიზრდება, ოდნავ აიწევს ზემოთ და ნელა დატრიალდება 5 გრადუსით. */
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* ბარათის სტილი */
+.card {
+    background-color: #fff;
+    width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.5s ease; 
+}
+
+/*hover */
+.card:hover {
+    transform: translateY(-10px) rotate(5deg); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}

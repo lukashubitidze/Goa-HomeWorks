@@ -1,0 +1,42 @@
+/* 3) შექმენი ღილაკი, რომლის შიგნით არსებული ტექსტი hover-ზე მარჯვნივ გადაიწევს,
+ ხოლო ღილაკის ფონიც შეიცვლება. */
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* ღილაკის სტილი */
+.hover-button {
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+
+.hover-button span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* hover */
+.hover-button:hover {
+    background-color: #2980b9; 
+}
+
+.hover-button:hover span {
+    transform: translateX(10px); 
+}

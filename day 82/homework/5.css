@@ -1,0 +1,28 @@
+/* 5) შექმენი ელემენტი, რომელიც hover-ზე ოდნავ შემცირდება და შემდეგ ნელა დაბრუნდება საწყის ზომაზე. */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* ელემენტის სტილი */
+.resize-element {
+    padding: 20px 40px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out; 
+}
+
+/* hover */
+.resize-element:hover {
+    transform: scale(0.95); 
+}

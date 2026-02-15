@@ -1,0 +1,32 @@
+/* 11) შექმენი სურათი, რომელსაც hover-ზე ექნება zoom + მცირე rotate ეფექტი ერთდროულად. */
+
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.image-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden; 
+    border-radius: 10px;
+}
+
+/* სურათი */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease; 
+}
+
+/* hover */
+.image-container:hover img {
+    transform: scale(1.2) rotate(5deg); 
+}

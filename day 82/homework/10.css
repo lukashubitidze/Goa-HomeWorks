@@ -1,0 +1,33 @@
+/* 10) გააკეთე ნავიგაციის მენიუ, სადაც hover-ზე ლინკი ოდნავ გაიზრდება და ქვემოდან ზემოთ ამოვა. */
+
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* ნავიგაციის მენიუ */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    background-color: #333;
+    padding: 20px 0;
+}
+
+/* ლინკები */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* hover */
+.navbar a:hover {
+    transform: translateY(-8px) scale(1.1); 
+    color: #3498db;
+}
