@@ -1,0 +1,9 @@
+.responsive-text {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .responsive-text {
+    font-size: 24px;
+  }
+}

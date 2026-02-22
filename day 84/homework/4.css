@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.small {
+  width: 80px;
+  height: 80px;
+}
+
+.red { background: red; }
+.green { background: green; }
+.blue { background: blue; }

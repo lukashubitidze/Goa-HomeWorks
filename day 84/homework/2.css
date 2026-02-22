@@ -1,0 +1,6 @@
+.main-title {
+    font-size: 36px;           /* დიდი ზომა */
+    color: #0b3d91;            /* მუქი ლურჯი ფერი */
+    border-bottom: 1px solid #0b3d91;  /* თხელი საზღვარი ქვემოთ */
+    padding-bottom: 10px;      /* დაშორება საზღვრამდე */
+}
