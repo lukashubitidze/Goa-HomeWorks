@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 86 - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 space-y-20 p-10">
+
+  <!-- 1) Profile Card -->
+  <div class="max-w-sm mx-auto bg-white rounded-2xl shadow-lg p-6 text-center">
+    <img src="https://media.printables.com/media/prints/fd5f05e9-6cd9-4a65-b094-3ec20264dd1b/images/9946087_0d59132b-ec8b-4302-bfc7-92be2c257916_ad55cb74-f29e-4a40-984b-3d4dcfe7967e/thumbs/inside/1280x960/jpg/oip.webp"
+         class="w-32 h-32 mx-auto rounded-full shadow-md mb-4">
+    <h2 class="text-xl font-bold">John Doe</h2>
+    <p class="text-gray-500">Frontend Developer</p>
+  </div>
+
+  <!-- 2) Gradient Button -->
+  <div class="text-center">
+    <button class="px-6 py-3 rounded-full text-white font-semibold 
+                   bg-gradient-to-r from-purple-500 to-pink-500
+                   hover:from-pink-500 hover:to-purple-500
+                   transform hover:scale-105
+                   transition duration-300 shadow-md">
+      Click Me
+    </button>
+  </div>
+
+  <!-- 3) 3 Card Grid -->
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-xl shadow-md text-center">Card 1</div>
+    <div class="bg-white p-6 rounded-xl shadow-2xl text-center scale-105">Card 2</div>
+    <div class="bg-white p-6 rounded-xl shadow-md text-center">Card 3</div>
+  </div>
+
+  <!-- 4) Flex Navbar -->
+  <nav class="bg-white shadow-md p-4">
+    <ul class="flex justify-center space-x-8">
+      <li><a href="#" class="hover:text-blue-500 hover:underline transition">Home</a></li>
+      <li><a href="#" class="hover:text-blue-500 hover:underline transition">About</a></li>
+      <li><a href="#" class="hover:text-blue-500 hover:underline transition">Services</a></li>
+      <li><a href="#" class="hover:text-blue-500 hover:underline transition">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 5) Hover Lift Block -->
+  <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-2xl 
+              transform hover:-translate-y-2 transition duration-300">
+    Hover Block
+  </div>
+
+  <!-- 6) Responsive Gallery -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <img src="https://media.printables.com/media/prints/fd5f05e9-6cd9-4a65-b094-3ec20264dd1b/images/9946087_0d59132b-ec8b-4302-bfc7-92be2c257916_ad55cb74-f29e-4a40-984b-3d4dcfe7967e/thumbs/inside/1280x960/jpg/oip.webp" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJcb_5OH1mWWtvcvDhymf5vM-6kAU3aC_Weg&s" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1xD1T4cEnAbwmM_kF5qJr8h_kJ85OMTyIoQ&s" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3d-Aw6pn4fyLxVIKNIRgvJ2gURKZqveEYqQ&s" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhLrq4s4xwmnVwnLBDcBPH7CZY4SSto1DoDA&s" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZtDPfbfcQ1W5nqCkYv6kkiIA4HShNyFgQTA&s" class="rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNlIhENfIqZPbgiqLqYVSugDvvUV2-_O6H1A&s" class="rounded-lg shadow-md">
+    <img src="https://images.unsplash.com/opengraph/1x1.png?mark=https%3A%2F%2Fimages.unsplash.com%2Fopengraph%2Flogo.png&mark-w=64&mark-align=top%2Cleft&mark-pad=50&h=630&w=1200&blend=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1508138221679-760a23a2285b%3Fcrop%3Dfaces%252Cedges%26h%3D630%26w%3D1200%26blend%3D000000%26blend-mode%3Dnormal%26blend-alpha%3D10%26mark-w%3D750%26mark-align%3Dmiddle%252Ccenter%26mark%3Dhttps%253A%252F%252Fimages.unsplash.com%252Fopengraph%252Fsearch-input.png%253Fw%253D750%2526h%253D84%2526txt%253Drandom%2526txt-pad%253D80%2526txt-align%253Dmiddle%25252Cleft%2526txt-color%253D%252523000000%2526txt-size%253D40%2526txt-width%253D660%2526txt-clip%253Dellipsis%2526auto%253Dformat%2526fit%253Dcrop%2526q%253D60%26auto%3Dformat%26fit%3Dcrop%26q%3D60%26ixid%3DM3wxMjA3fDB8MXxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fHx8MTc3MTM4NTc5Nnww%26ixlib%3Drb-4.1.0&blend-w=1&auto=format&fit=crop&q=60" class="rounded-lg shadow-md">
+  </div>
+
+  <!-- 7) Button Group -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-between">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg w-full">Button 1</button>
+    <button class="bg-green-500 text-white px-4 py-2 rounded-lg w-full">Button 2</button>
+    <button class="bg-red-500 text-white px-4 py-2 rounded-lg w-full">Button 3</button>
+  </div>
+
+  <!-- 8) Gradient Section -->
+  <section class="h-64 flex items-center justify-center 
+                  bg-gradient-to-r from-indigo-500 to-purple-600 
+                  rounded-2xl shadow-lg">
+    <h2 class="text-white text-3xl font-bold drop-shadow-md">
+      Centered Text Section
+    </h2>
+  </section>
+
+  <!-- 9) Cards with Hover Shadow -->
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-t-2xl shadow-md p-6 
+                hover:shadow-2xl transition duration-300">
+      Card A
+    </div>
+    <div class="bg-white rounded-t-2xl shadow-md p-6 
+                hover:shadow-2xl transition duration-300">
+      Card B
+    </div>
+    <div class="bg-white rounded-t-2xl shadow-md p-6 
+                hover:shadow-2xl transition duration-300">
+      Card C
+    </div>
+  </div>
+
+  <!-- 10) Responsive Flex Layout -->
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRae835wTobv1JOeB7Z1DCSD2aTmuGit6lNWA&s" 
+         class="w-full md:w-1/2 rounded-xl shadow-lg">
+    <div class="md:w-1/2">
+      <h2 class="text-2xl font-bold mb-4">Responsive Layout</h2>
+      <p class="text-gray-600">
+        Desktop-ზე ტექსტი და სურათი გვერდიგვერდაა, 
+        ხოლო მობილურზე სურათი ტექსტის ზემოთ გადადის.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>

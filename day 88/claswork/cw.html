@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Level 88 - Full Layout</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- ================= LAYOUT WITH ADVANCED SIDEBAR ================= -->
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-800 text-white p-6 flex flex-col">
+    <h2 class="text-xl font-bold mb-6">Admin Panel</h2>
+    
+    <nav class="space-y-2 flex-1">
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Dashboard</div>
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Analytics</div>
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Orders</div>
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Products</div>
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Customers</div>
+      <div class="hover:bg-gray-700 p-2 rounded cursor-pointer">Reports</div>
+    </nav>
+
+    <button class="mt-auto bg-red-500 hover:bg-red-600 p-2 rounded">
+      Logout
+    </button>
+  </aside>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="flex-1 p-8 space-y-16">
+
+    <!-- GRID CARDS -->
+    <section>
+      <h1 class="text-2xl font-bold mb-6">Responsive Cards</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="shadow rounded-xl p-4 bg-white">Card 1</div>
+        <div class="shadow rounded-xl p-4 bg-white">Card 2</div>
+        <div class="shadow rounded-xl p-4 bg-white">Card 3</div>
+        <div class="shadow rounded-xl p-4 bg-white">Card 4</div>
+        <div class="shadow rounded-xl p-4 bg-white">Card 5</div>
+        <div class="shadow rounded-xl p-4 bg-white">Card 6</div>
+      </div>
+    </section>
+
+    <!--  BOUNCE ELEMENT -->
+    <section class="flex justify-center">
+      <div class="w-16 h-16 bg-red-400 rounded-full 
+                  animate-bounce lg:animate-none 
+                  hover:bg-blue-500 transition">
+      </div>
+    </section>
+
+    <!--  LOADER -->
+    <section class="flex justify-center items-center">
+      <div class="flex gap-2">
+        <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+        <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+        <div class="w-5 h-5 bg-blue-500 rounded-full animate-pulse"></div>
+      </div>
+    </section>
+
+    <!--  HOVER ANIMATED CARD -->
+    <section class="flex justify-center">
+      <div class="shadow-lg rounded-xl p-6 bg-white 
+                  transition duration-300 transform
+                  hover:rotate-3 hover:scale-105 
+                  hover:shadow-2xl hover:-translate-y-2">
+        <h2 class="text-xl font-bold mb-2">Hover Card</h2>
+        <p>Hover-ზე ბარათი ანიმაციით შეიცვლება.</p>
+      </div>
+    </section>
+
+    <!--  BUTTON WITH ROTATING ICON -->
+    <section class="flex justify-center">
+      <button class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg
+                     hover:bg-green-600 active:scale-90
+                     transition duration-300">
+        
+        <span>Click Me</span>
+        
+        <svg class="w-5 h-5 transition-transform duration-500 hover:rotate-180"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5l7 7-7 7" />
+        </svg>
+
+      </button>
+    </section>
+
+    <!-- EXTRA CONTENT TABLE -->
+    <section class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-xl font-bold mb-4">Recent Orders</h2>
+      <table class="w-full text-left">
+        <thead>
+          <tr class="border-b">
+            <th class="py-2">ID</th>
+            <th class="py-2">Customer</th>
+            <th class="py-2">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b hover:bg-gray-100">
+            <td class="py-2">#1234</td>
+            <td class="py-2">John Doe</td>
+            <td class="py-2">$250</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="py-2">#1235</td>
+            <td class="py-2">Jane Smith</td>
+            <td class="py-2">$180</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
