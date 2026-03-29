@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        borderRadius: {
+          xl2: "20px",
+        },
+        spacing: {
+          128: "32rem",
+        },
+        colors: {
+          primary: "#4f46e5",
+          secondary: "#06b6d4",
+          accent: "#f59e0b",
+          error: "#ef4444",
+        },
+      },
+    },
+  }
+    </script>
+</head>
+<body class="bg-gray-100 p-10 space-y-16">
+
+  <!-- 1) LOGIN FORM -->
+  <div class="max-w-md mx-auto bg-white p-8 shadow-lg rounded-xl2 space-y-6">
+    <h2 class="text-2xl font-bold text-center">Login</h2>
+
+    <div>
+      <input type="email" placeholder="Email"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition" />
+    </div>
+
+    <div>
+      <input type="password" placeholder="Password"
+        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition" />
+    </div>
+
+    <button class="w-full bg-primary text-white py-3 rounded-xl2 hover:bg-indigo-700 transition">
+      Login
+    </button>
+  </div>
+
+  <!-- 3) CARD GRID -->
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl2 shadow-md overflow-hidden hover:scale-105 hover:shadow-xl transition">
+      <img src="https://picsum.photos/300" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold">Card Title</h3>
+        <p class="text-gray-600">Some description text</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl2 shadow-md overflow-hidden hover:scale-105 hover:shadow-xl transition">
+      <img src="https://picsum.photos/301" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold">Card Title</h3>
+        <p class="text-gray-600">Some description text</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl2 shadow-md overflow-hidden hover:scale-105 hover:shadow-xl transition">
+      <img src="https://picsum.photos/302" class="w-full h-40 object-cover">
+      <div class="p-4">
+        <h3 class="font-bold">Card Title</h3>
+        <p class="text-gray-600">Some description text</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4) SECTION WITH CUSTOM SPACING -->
+  <div class="bg-primary h-128 flex items-center justify-center text-black text-2xl">
+    Custom Height Section
+  </div>
+
+  <!-- 5) BUTTON GROUP -->
+  <div class="flex gap-4">
+    <button class="bg-primary text-black px-6 py-3 rounded-xl2 hover:bg-indigo-700 active:scale-95 transition">
+      Primary
+    </button>
+
+    <button class="bg-secondary text-black px-6 py-3 rounded-xl2 hover:bg-cyan-600 active:scale-95 transition">
+      Secondary
+    </button>
+
+    <button class="bg-accent text-black px-6 py-3 rounded-xl2 hover:bg-yellow-600 active:scale-95 transition">
+      Accent
+    </button>
+  </div>
+
+  <!-- 6) IMAGE OVERLAY -->
+  <div class="relative w-80 group">
+    <img src="https://picsum.photos/400" class="rounded-xl2">
+    
+    <div class="absolute inset-0 bg-black bg-opacity-60 rounded-xl2 group-hover:bg-opacity-0 transition"></div>
+    
+    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 text-white font-bold transition">
+      Hello Text
+    </div>
+  </div>
+
+  <!-- 7) INPUT ERROR STATE -->
+  <div class="max-w-md space-y-2">
+    <input type="text" placeholder="Username"
+      class="w-full p-3 border border-error rounded-lg focus:outline-none focus:ring-2 focus:ring-error" />
+    <p class="text-error text-sm">This field is required</p>
+  </div>
+
+  <!-- 8) IMAGE GALLERY WITH FILTERS -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <img src="https://picsum.photos/200"
+      class="w-full h-40 object-cover grayscale hover:grayscale-0 transition">
+
+    <img src="https://picsum.photos/201"
+      class="w-full h-40 object-cover contrast-200 hover:contrast-100 transition">
+
+    <img src="https://picsum.photos/202"
+      class="w-full h-40 object-cover brightness-50 hover:brightness-100 transition">
+
+    <img src="https://picsum.photos/203"
+      class="w-full h-40 object-cover sepia hover:sepia-0 transition">
+  </div>
+
+</body>
+</html>
+</body>
+</html>
