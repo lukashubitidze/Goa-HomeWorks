@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Floating Label Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#06b6d4',
+            accent: '#f59e0b'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <form class="bg-white p-8 rounded-2xl shadow-lg w-96 space-y-6">
+    <h2 class="text-2xl font-bold text-center text-primary">Register</h2>
+
+    <!-- Name -->
+    <div class="relative">
+      <input 
+        type="text" 
+        id="name" 
+        placeholder=" " 
+        class="peer w-full border border-gray-300 rounded-lg px-4 pt-5 pb-2 focus:outline-none focus:border-primary"
+      >
+      <label 
+        for="name" 
+        class="absolute left-4 top-2 text-gray-500 text-sm 
+               peer-placeholder-shown:top-3.5 
+               peer-placeholder-shown:text-base 
+               peer-placeholder-shown:text-gray-400
+               peer-focus:top-2 
+               peer-focus:text-sm 
+               peer-focus:text-primary
+               transition-all"
+      >
+        Name
+      </label>
+    </div>
+
+    <!-- Email -->
+    <div class="relative">
+      <input 
+        type="email" 
+        id="email" 
+        placeholder=" " 
+        class="peer w-full border border-gray-300 rounded-lg px-4 pt-5 pb-2 focus:outline-none focus:border-secondary"
+      >
+      <label 
+        for="email" 
+        class="absolute left-4 top-2 text-gray-500 text-sm 
+               peer-placeholder-shown:top-3.5 
+               peer-placeholder-shown:text-base 
+               peer-placeholder-shown:text-gray-400
+               peer-focus:top-2 
+               peer-focus:text-sm 
+               peer-focus:text-secondary
+               transition-all"
+      >
+        Email
+      </label>
+    </div>
+
+    <!-- Password -->
+    <div class="relative">
+      <input 
+        type="password" 
+        id="password" 
+        placeholder=" " 
+        class="peer w-full border border-gray-300 rounded-lg px-4 pt-5 pb-2 focus:outline-none focus:border-accent"
+      >
+      <label 
+        for="password" 
+        class="absolute left-4 top-2 text-gray-500 text-sm 
+               peer-placeholder-shown:top-3.5 
+               peer-placeholder-shown:text-base 
+               peer-placeholder-shown:text-gray-400
+               peer-focus:top-2 
+               peer-focus:text-sm 
+               peer-focus:text-accent
+               transition-all"
+      >
+        Password
+      </label>
+    </div>
+
+    <!-- Button -->
+    <button class="w-full bg-primary text-white py-2 rounded-lg hover:bg-indigo-700 transition">
+      Submit
+    </button>
+  </form>
+
+</body>
+</html>

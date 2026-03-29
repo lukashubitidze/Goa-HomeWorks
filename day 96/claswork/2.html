@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tooltip Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          spacing: {
+            'tooltip': '0.75rem'
+          },
+          colors: {
+            'tooltip-bg': '#1f2937',
+            'tooltip-text': '#f9fafb'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+  <div class="group relative">
+    
+    <!-- Button -->
+    <button 
+      class="px-4 py-2 bg-blue-600 text-white rounded-lg focus:outline-none"
+    >
+      Hover / Focus me
+    </button>
+
+    <!-- Tooltip -->
+    <div 
+      class="absolute left-1/2 -translate-x-1/2 mt-tooltip 
+             px-3 py-1 rounded-md text-sm
+             bg-tooltip-bg text-tooltip-text
+             opacity-0 invisible
+             group-hover:opacity-100 group-hover:visible
+             group-focus-within:opacity-100 group-focus-within:visible
+             transition-all duration-300"
+    >
+      This is a tooltip
+    </div>
+
+  </div>
+
+</body>
+</html>
