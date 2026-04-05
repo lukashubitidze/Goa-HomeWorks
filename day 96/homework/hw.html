@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#3b82f6",
+            secondary: "#6366f1",
+            error: "#ef4444",
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<form class="bg-white p-6 rounded-lg shadow w-96 space-y-6">
+
+  <!-- NAME -->
+  <div class="relative">
+    <input required placeholder=" "
+      class="peer w-full px-3 pt-5 pb-2 border rounded outline-none
+             focus:border-primary
+             invalid:border-error" />
+
+    <label class="absolute left-3 top-2 text-gray-400 text-sm transition-all
+      peer-placeholder-shown:top-3.5
+      peer-placeholder-shown:text-base
+      peer-focus:top-2
+      peer-focus:text-sm
+      peer-focus:text-secondary">
+      Name
+    </label>
+
+    <p class="text-error text-sm mt-1 hidden peer-invalid:block">
+      Name is required
+    </p>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="relative">
+    <input type="email" required placeholder=" "
+      class="peer w-full px-3 pt-5 pb-2 border rounded outline-none
+             focus:border-primary
+             invalid:border-error" />
+
+    <label class="absolute left-3 top-2 text-gray-400 text-sm transition-all
+      peer-placeholder-shown:top-3.5
+      peer-placeholder-shown:text-base
+      peer-focus:top-2
+      peer-focus:text-sm
+      peer-focus:text-secondary">
+      Email
+    </label>
+
+    <p class="text-error text-sm mt-1 hidden peer-invalid:block">
+      Enter valid email
+    </p>
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="relative">
+    <input type="password" required minlength="6" placeholder=" "
+      class="peer w-full px-3 pt-5 pb-2 border rounded outline-none
+             focus:border-primary
+             invalid:border-error" />
+
+    <label class="absolute left-3 top-2 text-gray-400 text-sm transition-all
+      peer-placeholder-shown:top-3.5
+      peer-placeholder-shown:text-base
+      peer-focus:top-2
+      peer-focus:text-sm
+      peer-focus:text-secondary">
+      Password
+    </label>
+
+    <p class="text-error text-sm mt-1 hidden peer-invalid:block">
+      მინიმუმ 6 სიმბოლო
+    </p>
+  </div>
+
+  <!-- CONFIRM PASSWORD -->
+  <div class="relative">
+    <input type="password" required placeholder=" "
+      class="peer w-full px-3 pt-5 pb-2 border rounded outline-none
+             focus:border-primary
+             invalid:border-error" />
+
+    <label class="absolute left-3 top-2 text-gray-400 text-sm transition-all
+      peer-placeholder-shown:top-3.5
+      peer-placeholder-shown:text-base
+      peer-focus:top-2
+      peer-focus:text-sm
+      peer-focus:text-secondary">
+      Confirm Password
+    </label>
+
+    <p class="text-error text-sm mt-1 hidden peer-invalid:block">
+      Required field
+    </p>
+  </div>
+
+  <!-- TOOLTIP BUTTON -->
+  <div class="relative group">
+    <button class="w-full bg-primary text-white py-2 rounded hover:bg-secondary">
+      Submit
+    </button>
+
+    <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+                px-2 py-1 text-sm text-white bg-gray-800 rounded
+                opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition">
+      Submit form
+    </div>
+  </div>
+
+</form>
+
+</body>
+</html>
