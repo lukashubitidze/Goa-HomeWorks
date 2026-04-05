@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="2cw.js"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+  <!-- Open Button -->
+  <button id="openBtn" class="px-6 py-2 bg-green-500 text-white rounded-lg">
+    Open Modal
+  </button>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 flex items-center justify-center bg-black/50">
+
+    <!-- Modal Content -->
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80 text-center">
+      <h2 class="text-lg font-semibold mb-4">Modal Title</h2>
+      <p class="text-gray-600 mb-4">ეს არის მარტივი Modal ფანჯარა</p>
+
+      <!-- Close Button -->
+      <button id="closeBtn" class="px-4 py-2 bg-red-500 text-white rounded-lg">
+        Close
+      </button>
+    </div>
+  </div>
+</body>
+</html>
