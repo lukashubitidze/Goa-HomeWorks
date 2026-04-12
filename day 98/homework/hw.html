@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Modal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-300 flex items-center justify-center h-screen">
+
+  <!-- Sign Up Button -->
+  <button id="openModalBtn" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">
+    Sign Up
+  </button>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-xl w-96 shadow-lg">
+      <h2 class="text-2xl font-bold mb-4">Sign Up</h2>
+
+      <form id="signupForm" class="space-y-4">
+        <input type="text" id="name" placeholder="Name"
+          class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+
+        <input type="email" id="email" placeholder="Email"
+          class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+
+        <input type="password" id="password" placeholder="Password"
+          class="w-full border p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+
+        <button type="submit"
+          class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Message Box -->
+  <div id="successBox" class="fixed top-5 right-5 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg hidden">
+    <p>თქვენი ინფორმაცია გაიგზავნა</p>
+    <button id="okBtn" class="mt-2 bg-white text-green-600 px-3 py-1 rounded">
+      OK
+    </button>
+  </div>
+
+  <script>
+    const openModalBtn = document.getElementById('openModalBtn');
+    const signupModal = document.getElementById('signupModal');
+    const signupForm = document.getElementById('signupForm');
+    const successBox = document.getElementById('successBox');
+    const okBtn = document.getElementById('okBtn');
+
+    // Open modal
+    openModalBtn.addEventListener('click', () => {
+      signupModal.classList.remove('hidden');
+      signupModal.classList.add('flex');
+    });
+
+    // Submit form
+    signupForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Get values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      console.log(name, email, password);
+
+      // Close signup modal
+      signupModal.classList.add('hidden');
+
+      // Show success message
+      successBox.classList.remove('hidden');
+
+      // Auto hide after 3 seconds
+      setTimeout(() => {
+        successBox.classList.add('hidden');
+      }, 3000);
+    });
+
+    // OK button closes success message
+    okBtn.addEventListener('click', () => {
+      successBox.classList.add('hidden');
+    });
+  </script>
+
+</body>
+</html>
