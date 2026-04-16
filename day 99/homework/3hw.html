@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white h-screen">
+
+<button id="start" class="bg-red-500 px-4 py-2 rounded m-4">Start</button>
+
+<div id="circle" class="w-12 h-12 bg-red-500 rounded-full absolute hidden"></div>
+
+<p id="res" class="m-4"></p>
+
+<script>
+let startTime;
+
+start.onclick = () => {
+  setTimeout(()=>{
+    circle.style.left = Math.random()*90+"%";
+    circle.style.top = Math.random()*90+"%";
+    circle.classList.remove("hidden");
+    startTime = Date.now();
+  }, Math.random()*2000+1000);
+};
+
+circle.onclick = () => {
+  res.innerText = Date.now() - startTime + " ms";
+  circle.classList.add("hidden");
+};
+</script>
+
+</body>
+</html>

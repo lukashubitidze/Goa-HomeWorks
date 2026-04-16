@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+
+<button id="start" class="bg-pink-500 px-4 py-2 rounded">Start</button>
+
+<div id="box" class="w-24 h-24 bg-gray-600 mt-4 cursor-pointer"></div>
+
+<p id="res"></p>
+
+<script>
+let startTime;
+
+start.onclick = () => {
+  box.classList.replace("bg-green-500","bg-gray-600");
+
+  setTimeout(()=>{
+    box.classList.replace("bg-gray-600","bg-green-500");
+    startTime = Date.now();
+  }, Math.random()*2000+1000);
+};
+
+box.onclick = () => {
+  if(box.classList.contains("bg-green-500")){
+    let t = Date.now() - startTime;
+
+    let msg = t < 200 ? "ძალიან სწრაფი 🚀" :
+              t < 400 ? "საშუალო ⚡" : "ნელი 🐢";
+
+    res.innerText = t + " ms - " + msg;
+  }
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col items-center justify-center h-screen">
+
+<button id="start" class="bg-purple-500 px-4 py-2 rounded">Start</button>
+
+<div class="flex space-x-2 mt-4">
+  <div id="b1" class="w-16 h-16 bg-gray-600"></div>
+  <div id="b2" class="w-16 h-16 bg-gray-600"></div>
+  <div id="b3" class="w-16 h-16 bg-gray-600"></div>
+  <div id="green" class="w-16 h-16 bg-gray-600 cursor-pointer"></div>
+</div>
+
+<p id="res"></p>
+
+<script>
+let startTime;
+
+start.onclick = () => {
+  [b1,b2,b3,green].forEach(b=>b.className="w-16 h-16 bg-gray-600");
+
+  setTimeout(()=>b1.classList.replace("bg-gray-600","bg-red-500"),500);
+  setTimeout(()=>b2.classList.replace("bg-gray-600","bg-red-500"),1000);
+  setTimeout(()=>b3.classList.replace("bg-gray-600","bg-red-500"),1500);
+
+  setTimeout(()=>{
+    green.classList.replace("bg-gray-600","bg-green-500");
+    startTime = Date.now();
+  },2000);
+};
+
+green.onclick = () => {
+  res.innerText = Date.now() - startTime + " ms";
+};
+</script>
+
+</body>
+</html>

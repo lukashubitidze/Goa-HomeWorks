@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center h-screen">
+
+  <button id="counterBtn" class="bg-blue-500 text-white px-4 py-2 rounded">
+    Click
+  </button>
+  <p id="countText" class="mt-4">Clicked: 0</p>
+
+  <script>
+    let count = 0;
+    const btn = document.getElementById("counterBtn");
+    const text = document.getElementById("countText");
+
+    btn.addEventListener("click", () => {
+      count++;
+      text.textContent = "Clicked: " + count;
+    });
+  </script>
+
+</body>
+</html>

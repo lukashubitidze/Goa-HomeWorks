@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen">
+
+  <div class="text-center">
+    <button id="btn1" class="bg-blue-500 text-white px-4 py-2 rounded">
+      Click me
+    </button>
+    <p id="text1" class="mt-4 hidden">Hello</p>
+  </div>
+
+  <script>
+    const btn1 = document.getElementById("btn1");
+    const text1 = document.getElementById("text1");
+
+    btn1.addEventListener("click", () => {
+      text1.classList.remove("hidden");
+      btn1.classList.remove("bg-blue-500");
+      btn1.classList.add("bg-green-500");
+    });
+  </script>
+
+</body>
+</html>

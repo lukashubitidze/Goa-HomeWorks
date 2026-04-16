@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center h-screen">
+
+  <input id="inputText" type="text" placeholder="Enter text"
+    class="border px-3 py-2 rounded mb-2">
+
+  <button id="showBtn" class="bg-blue-500 text-white px-4 py-2 rounded">
+    Show
+  </button>
+
+  <p id="output" class="mt-4"></p>
+
+  <script>
+    const input = document.getElementById("inputText");
+    const btn = document.getElementById("showBtn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", () => {
+      output.textContent = input.value;
+    });
+  </script>
+
+</body>
+</html>
