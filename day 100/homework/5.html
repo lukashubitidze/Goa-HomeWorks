@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>4 Rounds Game</title>
+</head>
+<body class="bg-slate-900 h-screen flex flex-col items-center justify-center">
+    <div id="game-container" class="bg-white p-8 rounded-3xl shadow-xl text-center border-t-8 border-orange-500">
+        <h1 class="text-2xl font-black text-zinc-800 mb-4">4 რაუნდის ტესტი</h1>
+        <div id="stage" class="w-48 h-48 bg-zinc-200 rounded-2xl mx-auto flex items-center justify-center cursor-pointer mb-6 text-zinc-400">
+            Click Start
+        </div>
+        <button id="start-btn" onclick="nextRound()" class="bg-zinc-800 text-white px-8 py-3 rounded-xl font-bold">დაწყება</button>
+        <div id="final-results" class="mt-4 text-left hidden"></div>
+    </div>
+
+    <script>
+        let round = 0;
+        let times = [];
+        let startT;
+        const colors = ['bg-red-500', 'bg-emerald-500', 'bg-violet-500', 'bg-sky-500'];
+        const stage = document.getElementById('stage');
+        const btn = document.getElementById('start-btn');
+        const resultsDiv = document.getElementById('final-results');
+
+        function nextRound() {
+            if(round >= 4) {
+                showResults();
+                return;
+            }
+            btn.classList.add('hidden');
+            resultsDiv.classList.add('hidden');
+            stage.innerText = "დაელოდე...";
+            stage.className = "w-48 h-48 bg-zinc-200 rounded-2xl mx-auto flex items-center justify-center mb-6";
+            
+            setTimeout(() => {
+                stage.innerText = "";
+                stage.className = `w-48 h-48 ${colors[round]} rounded-full mx-auto cursor-pointer shadow-lg transform scale-110 transition-all mb-6`;
+                startT = Date.now();
+                stage.onclick = clickTarget;
+            }, Math.random() * 2000 + 1000);
+        }
+
+        function clickTarget() {
+            const reaction = Date.now() - startT;
+            times.push(reaction);
+            stage.onclick = null;
+            round++;
+            
+            if(round < 4) {
+                stage.innerText = "შემდეგი";
+                stage.className = "w-48 h-48 bg-zinc-800 text-white rounded-2xl mx-auto flex items-center justify-center cursor-pointer mb-6";
+                stage.onclick = nextRound;
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            const best = Math.min(...times);
+            const avg = times.reduce((a,b) => a+b, 0) / 4;
+            
+            resultsDiv.innerHTML = `
+                <hr class="my-4">
+                <p><b>რაუნდები:</b> ${times.join(', ')} ms</p>
+                <p class="text-emerald-600"><b>საუკეთესო:</b> ${best} ms</p>
+                <p class="text-blue-600"><b>საშუალო:</b> ${avg.toFixed(1)} ms</p>
+            `;
+            resultsDiv.classList.remove('hidden');
+            btn.innerText = "თავიდან დაწყება";
+            btn.classList.remove('hidden');
+            stage.innerText = "დასრულდა";
+            stage.className = "w-48 h-48 bg-zinc-200 rounded-2xl mx-auto flex items-center justify-center mb-6";
+            round = 0;
+            times = [];
+        }
+    </script>
+</body>
+</html>

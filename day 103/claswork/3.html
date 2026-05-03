@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Like Button</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+  <div class="text-center">
+    <button onclick="addLike()" 
+      class="bg-pink-500 text-white px-6 py-3 rounded-xl hover:bg-pink-600">
+      👍 Like
+    </button>
+    <p id="likes" class="mt-4 text-xl">Likes: 0</p>
+  </div>
+
+  <script>
+    let count = 0;
+
+    function addLike() {
+      count++;
+      document.getElementById("likes").innerText = "Likes: " + count;
+    }
+  </script>
+
+</body>
+</html>

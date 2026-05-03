@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Reaction Test</title>
+</head>
+<body class="bg-slate-900 flex items-center justify-center h-screen text-white font-sans">
+    <div class="text-center p-10 bg-slate-800 rounded-2xl shadow-2xl w-96">
+        <h1 class="text-2xl mb-6 font-bold">რეაქციის ტესტი</h1>
+        <div id="game-zone" class="h-40 flex items-center justify-center text-4xl font-black mb-6 transition-all duration-200">
+            დააჭირეთ დაწყებას
+        </div>
+        <button id="main-btn" onclick="startGame()" class="bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-full font-bold transition-all transform active:scale-95">
+            START
+        </button>
+        <p id="result" class="mt-6 text-emerald-400 text-xl font-mono"></p>
+    </div>
+
+    <script>
+        let startTime, timeout;
+        const zone = document.getElementById('game-zone');
+        const btn = document.getElementById('main-btn');
+        const result = document.getElementById('result');
+
+        function startGame() {
+            result.innerText = "";
+            btn.classList.add('hidden');
+            zone.innerText = "Get Ready...";
+            zone.className = "h-40 flex items-center justify-center text-4xl font-black mb-6 text-yellow-500";
+
+            const delay = Math.random() * 3000 + 2000; // 2-5 წამი
+
+            timeout = setTimeout(() => {
+                zone.innerText = "GO!";
+                zone.className = "h-40 flex items-center justify-center text-6xl font-black mb-6 text-emerald-500 cursor-pointer";
+                startTime = Date.now();
+                zone.onclick = finishGame;
+            }, delay);
+        }
+
+        function finishGame() {
+            const reactionTime = Date.now() - startTime;
+            zone.innerText = "WAIT!";
+            zone.className = "h-40 flex items-center justify-center text-4xl font-black mb-6 text-white";
+            result.innerText = `თქვენი დრო: ${reactionTime}ms`;
+            btn.classList.remove('hidden');
+            btn.innerText = "თავიდან ცდა";
+            zone.onclick = null;
+        }
+    </script>
+</body>
+</html>

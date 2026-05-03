@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Background</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="body" class="flex items-center justify-center h-screen bg-gray-100">
+
+  <div class="text-center">
+    <input id="colorInput" type="text" placeholder="Enter color"
+      class="border px-4 py-2 rounded-lg mr-2">
+    
+    <button onclick="changeColor()" 
+      class="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600">
+      Change
+    </button>
+  </div>
+
+  <script>
+    function changeColor() {
+      const color = document.getElementById("colorInput").value;
+      document.getElementById("body").style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>

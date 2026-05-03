@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Speed Clicker</title>
+</head>
+<body class="bg-rose-50 h-screen flex items-center justify-center">
+    <div id="game-box" class="relative w-[500px] h-[500px] bg-white border-4 border-rose-200 rounded-xl overflow-hidden shadow-inner">
+        <div id="hud" class="absolute top-2 left-2 text-rose-600 font-bold uppercase tracking-widest">
+            დრო: <span id="timer">4</span> | ქულა: <span id="score">0</span>
+        </div>
+        <button id="target" onclick="hit()" class="hidden absolute w-12 h-12 bg-rose-500 rounded-full shadow-lg border-2 border-white"></button>
+        <button id="start-trigger" onclick="runGame()" class="absolute inset-0 m-auto w-32 h-12 bg-rose-600 text-white rounded-lg font-bold">START</button>
+    </div>
+
+    <script>
+        let score = 0;
+        let timeLeft = 4;
+        const target = document.getElementById('target');
+        const timerDisplay = document.getElementById('timer');
+        const scoreDisplay = document.getElementById('score');
+
+        function moveTarget() {
+            const x = Math.random() * 450;
+            const y = Math.random() * 450;
+            target.style.left = x + 'px';
+            target.style.top = y + 'px';
+        }
+
+        function hit() {
+            score++;
+            scoreDisplay.innerText = score;
+            moveTarget();
+        }
+
+        function runGame() {
+            score = 0;
+            timeLeft = 4;
+            scoreDisplay.innerText = 0;
+            document.getElementById('start-trigger').classList.add('hidden');
+            target.classList.remove('hidden');
+            moveTarget();
+
+            const interval = setInterval(() => {
+                timeLeft -= 0.1;
+                timerDisplay.innerText = timeLeft.toFixed(1);
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    target.classList.add('hidden');
+                    document.getElementById('start-trigger').classList.remove('hidden');
+                    alert("თამაში დასრულდა! ქულა: " + score);
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>

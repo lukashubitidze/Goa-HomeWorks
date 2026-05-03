@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Shape Clicker</title>
+</head>
+<body class="bg-gray-100 h-screen ">
+    <div id="ui" class="absolute top-5 left-5 z-10 pointer-events-none">
+        <button id="start-btn" onclick="start()" class="pointer-events-auto bg-indigo-600 text-white px-6 py-2 rounded-lg shadow-lg">დაწყება</button>
+        <p id="stats" class="mt-2 text-gray-800 font-bold"></p>
+    </div>
+    <div id="game-area" class="relative w-full h-full"></div>
+
+    <script>
+        let times = [];
+        let count = 0;
+        let lastTime;
+        const area = document.getElementById('game-area');
+
+        function start() {
+            times = [];
+            count = 0;
+            document.getElementById('start-btn').classList.add('hidden');
+            spawnShape();
+        }
+
+        function spawnShape() {
+            if (count >= 5) {
+                const avg = times.reduce((a,b) => a+b, 0) / times.length;
+                document.getElementById('stats').innerText = `საშუალო დრო: ${avg.toFixed(2)}ms`;
+                document.getElementById('start-btn').classList.remove('hidden');
+                area.innerHTML = "";
+                return;
+            }
+
+            const shapes = ['rounded-full', 'rounded-none', 'polygon'];
+            const shapeType = shapes[Math.floor(Math.random() * 2)]; // წრე ან კვადრატი
+            const size = 60;
+            const x = Math.random() * (window.innerWidth - size);
+            const y = Math.random() * (window.innerHeight - size);
+
+            const div = document.createElement('div');
+            div.className = `absolute cursor-pointer bg-red-500 transition-transform active:scale-90 ${shapeType}`;
+            if(Math.random() > 0.5) div.style.clipPath = "polygon(50% 0%, 0% 100%, 100% 100%)"; // სამკუთხედის იმიტაცია
+            
+            div.style.width = size + 'px';
+            div.style.height = size + 'px';
+            div.style.left = x + 'px';
+            div.style.top = y + 'px';
+            
+            lastTime = Date.now();
+            div.onclick = () => {
+                times.push(Date.now() - lastTime);
+                count++;
+                area.innerHTML = "";
+                spawnShape();
+            };
+            area.appendChild(div);
+        }
+    </script>
+</body>
+</html>

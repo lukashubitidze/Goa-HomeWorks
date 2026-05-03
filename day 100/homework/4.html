@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Memory Flash</title>
+</head>
+<body class="bg-gray-900 h-screen flex flex-col items-center justify-center text-white">
+    <h2 id="msg" class="mb-4 text-xl font-mono">მოემზადეთ...</h2>
+    <div class="grid grid-cols-2 gap-4">
+        <div id="b0" onclick="check(0)" class="w-32 h-32 bg-gray-700 rounded-lg transition-colors duration-200"></div>
+        <div id="b1" onclick="check(1)" class="w-32 h-32 bg-gray-700 rounded-lg transition-colors duration-200"></div>
+        <div id="b2" onclick="check(2)" class="w-32 h-32 bg-gray-700 rounded-lg transition-colors duration-200"></div>
+        <div id="b3" onclick="check(3)" class="w-32 h-32 bg-gray-700 rounded-lg transition-colors duration-200"></div>
+    </div>
+    <button onclick="startSequence()" class="mt-8 bg-amber-500 px-10 py-2 rounded font-bold text-gray-900 hover:bg-amber-400">START</button>
+
+    <script>
+        let targetBlock = -1;
+        let startTime;
+
+        async function startSequence() {
+            document.getElementById('msg').innerText = "უყურე ბლოკებს!";
+            for(let i=0; i<4; i++) {
+                const el = document.getElementById('b'+i);
+                el.classList.replace('bg-gray-700', 'bg-blue-400');
+                await new Promise(r => setTimeout(r, 300));
+                el.classList.replace('bg-blue-400', 'bg-gray-700');
+            }
+            
+            targetBlock = Math.floor(Math.random() * 4);
+            const winner = document.getElementById('b' + targetBlock);
+            winner.classList.replace('bg-gray-700', 'bg-amber-400');
+            startTime = Date.now();
+            document.getElementById('msg').innerText = "დააჭირე განათებულს!";
+        }
+
+        function check(id) {
+            if(targetBlock === -1) return;
+            const timeTaken = Date.now() - startTime;
+            if(id === targetBlock) {
+                document.getElementById('msg').innerText = `სწორია! დრო: ${timeTaken}ms`;
+            } else {
+                document.getElementById('msg').innerText = "არასწორია!";
+            }
+            // Reset
+            document.querySelectorAll('.bg-amber-400').forEach(el => el.classList.replace('bg-amber-400', 'bg-gray-700'));
+            targetBlock = -1;
+        }
+    </script>
+</body>
+</html>

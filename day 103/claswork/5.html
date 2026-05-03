@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center h-screen bg-gray-100">
+
+  <div class="text-center">
+    <button onclick="startCountdown()" 
+      class="bg-red-500 text-white px-6 py-3 rounded-xl hover:bg-red-600">
+      Start
+    </button>
+    <p id="count" class="mt-4 text-3xl font-bold"></p>
+  </div>
+
+  <script>
+    function startCountdown() {
+      let num = 3;
+      const display = document.getElementById("count");
+      display.innerText = num;
+
+      const interval = setInterval(() => {
+        num--;
+        if (num > 0) {
+          display.innerText = num;
+        } else {
+          clearInterval(interval);
+          display.innerText = "Time's up!";
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
