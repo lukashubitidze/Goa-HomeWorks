@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Guess Number</title>
+</head>
+
+<body class="flex justify-center items-center h-screen bg-gradient-to-br from-indigo-500 to-purple-700">
+
+<div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl text-center w-96 text-white">
+
+    <h1 class="text-3xl font-bold mb-4">
+        Guess Number
+    </h1>
+
+    <p id="info" class="text-lg mb-5">
+        Lives: 3
+    </p>
+
+    <input
+        id="input"
+        type="number"
+        placeholder="1 - 10"
+        class="w-full p-3 rounded-xl text-black mb-4 outline-none"
+    >
+
+    <button
+        id="btn"
+        class="w-full bg-green-500 hover:bg-green-600 py-3 rounded-xl font-bold transition"
+    >
+        Guess
+    </button>
+
+    <div
+        id="message"
+        class="mt-5 text-xl font-bold"
+    ></div>
+
+</div>
+
+<script>
+
+let lives = 3;
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+let gameEnded = false;
+
+function updateInfo() {
+    info.innerText = "Lives: " + lives;
+}
+
+function gameOver() {
+    gameEnded = true;
+
+    message.innerText =
+        "❌ Game Over! Number was " + randomNumber;
+
+    btn.disabled = true;
+}
+
+btn.onclick = () => {
+
+    if (gameEnded) return;
+
+    let guess = Number(input.value);
+
+    if (guess === randomNumber) {
+
+        message.innerText = "🎉 You Win!";
+        gameEnded = true;
+        btn.disabled = true;
+
+    } else {
+
+        lives--;
+        updateInfo();
+
+        message.innerText = "❌ Wrong Number";
+
+        if (lives <= 0) {
+            gameOver();
+        }
+    }
+
+    input.value = "";
+};
+
+updateInfo();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 h-screen flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold mb-6">თამაში 1: რეაქცია</h1>
+    <button id="btn" class="px-16 py-24 bg-red-500 text-white text-4xl font-black rounded-xl shadow-2xl transition-transform active:scale-95">
+        Don’t Click
+    </button>
+    <p id="result" class="mt-8 text-xl font-semibold text-gray-700"></p>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const res = document.getElementById('result');
+        let canClick = false;
+        let startTime;
+
+        setTimeout(() => {
+            canClick = true;
+            btn.innerText = "Click NOW";
+            btn.classList.replace('bg-red-500', 'bg-green-500');
+            startTime = Date.now();
+        }, Math.random() * 3000 + 2000);
+
+        btn.onclick = () => {
+            if (!canClick) {
+                res.innerText = "წააგე! ნაადრევად დააჭირე.";
+                btn.disabled = true;
+            } else {
+                const time = (Date.now() - startTime) / 1000;
+                res.innerText = `ყოჩაღ! შენი დროა: ${time} წამი`;
+                canClick = false;
+            }
+        };
+    </script>
+</body>
+</html>

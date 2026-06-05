@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Math Quiz</title>
+</head>
+
+<body class="flex justify-center items-center h-screen bg-gradient-to-br from-purple-500 to-pink-600">
+
+<div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl text-center w-96 text-white">
+
+    <h1 class="text-3xl font-bold mb-4">
+        Math Quiz
+    </h1>
+
+    <p id="info" class="mb-4 text-lg">
+        Lives: 5 | Score: 0
+    </p>
+
+    <h2 id="question" class="text-4xl font-bold mb-5">
+        5 + 5
+    </h2>
+
+    <input
+        id="answer"
+        type="number"
+        class="w-full p-3 rounded-xl text-black mb-4"
+        placeholder="Answer"
+    >
+
+    <button
+        id="btn"
+        class="w-full bg-green-500 hover:bg-green-600 py-3 rounded-xl font-bold"
+    >
+        Submit
+    </button>
+
+    <div id="message" class="mt-4 text-xl"></div>
+
+</div>
+
+<script>
+
+let lives = 5;
+let score = 0;
+let correctAnswer;
+let gameEnded = false;
+
+function updateInfo() {
+    info.innerText =
+        "Lives: " + lives + " | Score: " + score;
+}
+
+function generateQuestion() {
+
+    let num1 = Math.floor(Math.random() * 10);
+    let num2 = Math.floor(Math.random() * 10);
+
+    correctAnswer = num1 + num2;
+
+    question.innerText =
+        num1 + " + " + num2;
+}
+
+function gameOver() {
+
+    gameEnded = true;
+
+    message.innerText =
+        "❌ Game Over! Final Score: " + score;
+
+    btn.disabled = true;
+}
+
+btn.onclick = () => {
+
+    if (gameEnded) return;
+
+    let userAnswer = Number(answer.value);
+
+    if (userAnswer === correctAnswer) {
+
+        score++;
+        message.innerText = "✅ Correct";
+
+    } else {
+
+        lives--;
+        message.innerText = "❌ Wrong";
+    }
+
+    updateInfo();
+
+    if (lives <= 0) {
+        gameOver();
+        return;
+    }
+
+    answer.value = "";
+
+    generateQuestion();
+};
+
+generateQuestion();
+updateInfo();
+
+</script>
+
+</body>
+</html>

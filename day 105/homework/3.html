@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Password Game</title>
+</head>
+
+<body class="flex justify-center items-center h-screen bg-gradient-to-br from-blue-500 to-indigo-700">
+
+<div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl text-center w-96 text-white">
+
+    <h1 class="text-3xl font-bold mb-5">
+        Login System
+    </h1>
+
+    <p id="info" class="mb-4 text-lg">
+        Lives: 3
+    </p>
+
+    <input
+        id="password"
+        type="password"
+        placeholder="Enter Password"
+        class="w-full p-3 rounded-xl text-black mb-4"
+    >
+
+    <button
+        id="btn"
+        class="w-full bg-purple-500 hover:bg-purple-600 py-3 rounded-xl font-bold"
+    >
+        Login
+    </button>
+
+    <div id="message" class="mt-5 text-xl font-bold"></div>
+
+</div>
+
+<script>
+
+const correctPassword = "1234";
+
+let lives = 3;
+let gameEnded = false;
+
+function updateInfo() {
+    info.innerText =
+        "Lives: " + lives;
+}
+
+function gameOver() {
+
+    gameEnded = true;
+
+    message.innerText =
+        "❌ Access Denied";
+
+    btn.disabled = true;
+}
+
+btn.onclick = () => {
+
+    if (gameEnded) return;
+
+    let userPassword =
+        password.value;
+
+    if (userPassword === correctPassword) {
+
+        message.innerText =
+            "✅ Access Granted";
+
+        btn.disabled = true;
+        return;
+    }
+
+    lives--;
+
+    message.innerText =
+        "❌ Wrong Password";
+
+    updateInfo();
+
+    if (lives <= 0) {
+        gameOver();
+    }
+
+    password.value = "";
+};
+
+updateInfo();
+
+</script>
+
+</body>
+</html>
