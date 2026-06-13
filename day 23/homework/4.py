@@ -1,0 +1,9 @@
+vowels = ['ა', 'ე', 'ი', 'ო', 'უ']
+
+print("უნდა შეიყვანოთ 10 სიტყვა:")
+for i in range(10):
+    word = input(f"შეიყვანეთ მე-{i+1} სიტყვა: ")
+    
+    # თუ სწორია, ეგრევე ვბეჭდავთ
+    if word[0] not in vowels and word[-1] not in vowels:
+        print(f"-> სწორია: {word}")

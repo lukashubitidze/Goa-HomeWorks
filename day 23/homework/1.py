@@ -1,0 +1,15 @@
+vowels = ['ა', 'ე', 'ი', 'ო', 'უ']
+
+while True:
+    word = input("შეიყვანეთ სიტყვა: ")
+    
+    # ვიღებთ პირველ და ბოლო ასოს
+    first_letter = word[0]
+    last_letter = word[-1]
+    
+    # ვამოწმებთ, რომ არცერთი არ იყოს ხმოვანთა სიაში
+    if first_letter not in vowels and last_letter not in vowels:
+        print(f"კარგია! სიტყვა '{word}' სწორია!")
+        break
+    else:
+        print("არასწორია, სცადეთ თავიდან (პირველი ან ბოლო ასო ხმოვანია).")

@@ -1,0 +1,10 @@
+vowels = ['ა', 'ე', 'ი', 'ო', 'უ']
+correct_count = 0
+
+for i in range(5):
+    word = input(f"შეიყვანეთ სიტყვა ({i+1}/5): ")
+    
+    if word[0] not in vowels and word[-1] not in vowels:
+        correct_count += 1 # თუ სწორია, მთვლელს ვზრდით 1-ით
+
+print(f"\nთქვენ სულ შეიყვანეთ {correct_count} სწორი სიტყვა.")
