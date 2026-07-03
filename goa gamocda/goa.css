@@ -1,0 +1,524 @@
+/* ==========================================
+   ბაზისური პარამეტრები და ძველი სტილები
+   ========================================== */
+* {
+    margin: 0; /* აუქმებს ბრაუზერის ავტომატურ ქარხნულ დაშორებებს გარედან */
+    padding: 0; /* აუქმებს ბრაუზერის ავტომატურ შიდა დაშორებებს */
+    box-sizing: border-box; /* ზომებში იანგარიშება padding და border, რომ სტრუქტურა არ აირიოს */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* საიტის ფონტი */
+    scroll-behavior: smooth; /* საიტზე ლინკებზე გადასვლისას გლუვი სქროლი */
+}
+
+body {
+    background-color: #0b0c10; /* საიტის მუქი ფონი */
+    color: #ffffff; /* ტექსტის თეთრი ფერი */
+    transition: background-color 0.3s, color 0.3s; /* თემის გადართვისას ფერების გლუვი ცვლილება */
+}
+
+span {
+    color: #45f3ff; /* გამოყოფილი სიტყვების ცისფერი ფერი */
+}
+
+/* ნავიგაცია */
+.navbar {
+    display: flex; /* ფლექსბოქს განლაგება ელემენტების გვერდიგვერდ დასასმელად */
+    justify-content: space-between; /* ელემენტებს შორის მაქსიმალური დაშორება (ლოგო მარცხნივ, მენიუ მარჯვნივ) */
+    align-items: center; /* ელემენტების ვერტიკალური გაცენტრება */
+    padding: 20px 8%; /* შიდა დაშორება: 20px ზედა-ქვედა, 8% მარჯვენა-მარცხენა */
+    background-color: #1f2833; /* მენიუს ზოლის ფონი */
+    position: sticky; /* ეკრანზე მიწებებული მენიუ სქროლის დროს */
+    top: 0; /* მიეწებება სულ ზედა ნაწილს */
+    z-index: 1000; /* სხვა ელემენტებზე ზემოდან მოქცევა */
+}
+
+.logo {
+    font-size: 24px; /* ტექსტური ლოგოს ზომა (თუ სურათი არ ჩაიტვირთება) */
+    font-weight: bold; /* სქელი ტექსტი */
+}
+
+.nav-links {
+    list-style: none; /* სიის წერტილების გაუქმება */
+    display: flex; /* ლინკების გვერდიგვერდ განლაგება */
+    align-items: center; /* ვერტიკალური გასწორება */
+}
+
+.nav-links li {
+    margin-left: 20px; /* ლინკებს შორის მარცხენა დაშორება */
+}
+
+.nav-links a {
+    color: #cc00ff; /* მენიუს ტექსტების ფერი */
+    text-decoration: none; /* ხაზგასმის მოცილება ლინკებზე */
+    font-size: 16px; /* შრიფტის ზომა */
+    transition: 0.3s; /* ჰოვერის (მიტანის) ეფექტის დრო */
+}
+
+.nav-links a:hover {
+    color: #45f3ff; /* მაუსის მიტანისას ტექსტის გაცისფერება */
+}
+
+/* Hero სექცია */
+.hero-section {
+    height: 90vh; /* სექციის სიმაღლე - ეკრანის სიმაღლის 90% */
+    display: flex; /* შიდა კონტენტის ფლექს განლაგება */
+    justify-content: center; /* ჰორიზონტალური გაცენტრება */
+    align-items: center; /* ვერტიკალური გაცენტრება */
+    text-align: center; /* ტექსტის ცენტრში დასმა */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80'); /* ფონის გამუქებული ფენა და სურათი */
+    background-size: cover; /* სურათი სრულად ფარავს სექციას */
+    background-position: center; /* სურათის ცენტრზე ორიენტირება */
+    padding: 0 20px; /* გვერდითი დაშორება მობილურებისთვის */
+}
+
+.hero-content h1 {
+    font-size: 45px; /* მთავარი სათაურის ზომა */
+    margin-bottom: 20px; /* ქვედა დაშორება */
+}
+
+.hero-content p {
+    font-size: 18px; /* აღწერის ტექსტის ზომა */
+    margin-bottom: 30px; /* ქვედა დაშორება ღილაკამდე */
+    max-width: 600px; /* ტექსტის მაქსიმალური სიგანე, რომ ძალიან არ გაიწელოს */
+    margin-left: auto; /* მარცხენა ავტო-ცენტრირება */
+    margin-right: auto; /* მარჯვენა ავტო-ცენტრირება */
+    color: #a9b2c3; /* ოდნავ ნაცრისფერი ტექსტი */
+}
+
+.btn {
+    display: inline-block; /* ელემენტის ბლოკური ქცევა ზომების მისაღებად */
+    padding: 12px 30px; /* შიდა დაშორება ღილაკში */
+    background-color: #45f3ff; /* ღილაკის ცისფერი ფონი */
+    color: #0b0c10; /* ტექსტის ფერი */
+    text-decoration: none; /* ხაზგასმის გაუქმება */
+    font-weight: bold; /* სქელი ტექსტი */
+    border-radius: 5px; /* კუთხეების მომრგვალება */
+    transition: 0.4s; /* ანიმაციის სიგლუვე */
+    cursor: pointer; /* მაუსის მიტანისას ხელის იკონკა */
+    border: none; /* ჩარჩოს გაუქმება */
+}
+
+.btn:hover {
+    background-color: #fff; /* ჰოვერზე თეთრი ფონი */
+    box-shadow: 0 0 15px #45f3ff; /* ნეონისებრი ნათება ირგვლივ */
+}
+
+/* სექციები */
+.about-section, .courses-section {
+    padding: 80px 8%; /* დიდი დაშორებები სექციებს შორის */
+    text-align: center; /* ტექსტების გაცენტრება */
+}
+
+.about-section h2, .courses-section h2 {
+    font-size: 36px; /* სექციების სათაურების ზომა */
+    margin-bottom: 20px;
+}
+
+.info-text {
+    color: #a9b2c3;
+    margin-bottom: 40px;
+    font-style: italic; /* დახრილი ტექსტი */
+}
+
+.about-grid, .courses-container {
+    display: flex; /* ბარათების გვერდიგვერდ განლაგება */
+    justify-content: center; /* ცენტრში მოგროვება */
+    gap: 30px; /* ბარათებს შორის დაშორება */
+    flex-wrap: wrap; /* ეკრანზე დაუტევლობისას ბარათების ქვემოთ ჩამოტანა (რესპონსიულობა) */
+}
+
+.about-card {
+    background-color: #1f2833; /* ბარათის ფონი */
+    padding: 30px; /* შიდა სივრცე */
+    border-radius: 8px; /* მომრგვალება */
+    width: 300px; /* ფიქსირებული სიგანე */
+    border: 1px solid #2f3b4c; /* თხელი ჩარჩო */
+}
+
+/* კურსის ბარათები */
+.course-card {
+    background-color: #1f2833;
+    padding: 30px;
+    border-radius: 8px;
+    width: 350px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #2f3b4c;
+    text-align: left; /* შიდა ტექსტის მარცხნივ გასწორება */
+    position: relative;
+}
+
+.course-card:hover {
+    border-color: #45f3ff; /* მიტანისას ჩარჩოს გაცისფერება */
+    box-shadow: 0 5px 15px rgba(69, 243, 255, 0.2); /* ნაზი ჩრდილი ქვემოდან */
+}
+
+.course-card h3 {
+    margin-bottom: 15px;
+    color: #45f3ff;
+}
+
+.arrow {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #a9b2c3;
+    transition: 0.3s; /* დატრიალების სიგლუვე */
+}
+
+.course-details {
+    display: none; /* თავიდან დამალულია დეტალები */
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #2f3b4c; /* გამყოფი თხელი ხაზი */
+}
+
+.course-details h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.course-details ul {
+    list-style-type: '✔ '; /* სიის წერტილების შეცვლა "პწიჩკით" */
+    margin-left: 20px;
+    color: #a9b2c3;
+}
+
+.course-details li {
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+/* კლასები, რომლებიც აქტიურდება JS-ით ქლიქის დროს */
+.course-card.active .course-details {
+    display: block; /* აჩენს კურსის დეტალებს */
+}
+
+.course-card.active .arrow {
+    transform: rotate(180deg); /* ატრიალებს ისარს 180 გრადუსით */
+    color: #45f3ff;
+}
+
+/* Footer */
+footer {
+    background-color: #1f2833;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #a9b2c3;
+}
+
+/* მედია სივრცე და ვიდეოები */
+.videos-section {
+    padding: 80px 8%;
+    text-align: center;
+    background-color: #12141c;
+}
+
+.filter-buttons {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: #1f2833;
+    color: #fff;
+    border: 1px solid #2f3b4c;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #45f3ff;
+    color: #0b0c10;
+    box-shadow: 0 0 10px rgba(69, 243, 255, 0.4);
+}
+
+.videos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background-color: #1f2833;
+    border-radius: 8px;
+    width: 320px;
+    overflow: hidden; /* შიგთავსი არ სცილდება ბარათის მომრგვალებულ კუთხეებს */
+    cursor: pointer;
+    border: 1px solid #2f3b4c;
+    transition: 0.3s;
+    text-align: left;
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* ბარათის ოდნავ აწევა ზემოთ ეფექტისთვის */
+    border-color: #45f3ff;
+}
+
+.video-thumbnail {
+    position: relative; /* საჭიროა შიგნით play იკონკის დასაცენტრებლად */
+    height: 180px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* სურათის პროპორციული ჩაჯდომა ჩარჩოში */
+    transition: 0.3s;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.05); /* სურათის ოდნავ გადიდება ბარათზე მიტანისას */
+}
+
+.play-icon {
+    position: absolute; /* აბსოლუტური პოზიციონირება ფოტოზე ზემოდან დასასმელად */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* სრული ცენტრირება */
+    background-color: rgba(69, 243, 255, 0.8);
+    color: #0b0c10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* მრგვალი ფორმა */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(69, 243, 255, 0.5);
+}
+
+.video-card h3 {
+    padding: 15px 15px 5px 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.tag {
+    display: inline-block;
+    margin: 0 15px 15px 15px;
+    background-color: #2f3b4c;
+    color: #45f3ff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* მოდალური ფანჯარა (ვიდეოსთვის და რეგისტრაციისთვის) */
+.modal {
+    display: none; /* თავიდან სრულიად დამალულია, იხსნება JS-ით */
+    position: fixed; /* ეკრანზე უძრავად დგომა სქროლის მიუხედავად */
+    z-index: 2000; /* ყველაზე მაღალი ფენა საიტზე */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* ეკრანის ჩამუქება ფონზე */
+    justify-content: center; /* ცენტრირება */
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    aspect-ratio: 16/9; /* იუთუბ ვიდეოს სტანდარტული პროპორცია */
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.close-modal, .close-signup {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-modal:hover, .close-signup:hover {
+    color: #45f3ff;
+}
+
+/* თემის გადამრთველი ღილაკი */
+.theme-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+/* ==========================================
+   ახალი ელემენტების სპეციფიკური სტილები
+   ========================================== */
+
+/* ლოგოს სურათის ზომის კონტროლი */
+#logo-img {
+    height: 45px; /* ფიქსირებული სიმაღლე, რომ მენიუში ლამაზად ჩაჯდეს */
+    object-fit: contain; /* ინარჩუნებს სურათის პროპორციას გაწელვის გარეშე */
+    vertical-align: middle;
+}
+
+/* ახალი Sign Up ღილაკი მენიუში */
+.signup-btn {
+    background-color: #45f3ff;
+    color: #0b0c10;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 15px; /* დაშორება წინა ელემენტისგან */
+}
+
+.signup-btn:hover {
+    background-color: #fff;
+    box-shadow: 0 0 12px #45f3ff;
+}
+
+/* რეგისტრაციის ფორმის უნიკალური სტილი */
+.signup-form {
+    background-color: #1f2833;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px; /* მცირე ზომა კლასიკური ფორმისთვის */
+    text-align: center;
+    border: 1px solid #2f3b4c;
+    aspect-ratio: auto; /* აუქმებს ვიდეოს 16:9 იძულებით პროპორციას */
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+}
+
+/* ფორმის ინპუტები (სახელი, მაილი, პაროლი) */
+.signup-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0; /* დაშორებები ერთმანეთს შორის */
+    background-color: #0b0c10;
+    border: 1px solid #2f3b4c;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none; /* აუქმებს ბრაუზერის სტანდარტულ ჩარჩოს მოკლიკებისას */
+}
+
+.signup-form input:focus {
+    border-color: #45f3ff; /* ინპუტში ჩადგომისას ჩარჩოს განათება */
+}
+
+.signup-form .btn {
+    width: 100%; /* ღილაკი იშლება სრულ სიგანეზე */
+    margin-top: 15px;
+}
+
+/* რეგისტრაციის დახურვის ღილაკის სწორი პოზიცია ფორმაში */
+.close-signup {
+    top: 15px;
+    right: 20px;
+    color: #a9b2c3;
+}
+
+/* სოციალური იკონკები ფუტერში */
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #a9b2c3;
+    font-size: 26px; /* იკონკების ზომა */
+    margin: 0 12px; /* დაშორება გვერდებიდან */
+    transition: 0.3s;
+    display: inline-block; /* საჭიროა transform-ის სწორი მუშაობისთვის */
+}
+
+.social-links a:hover {
+    color: #45f3ff;
+    transform: translateY(-3px); /* მიტანისას ოდნავ ასვლა ზემოთ */
+}
+
+/* ==========================================
+   Light Mode (თეთრი თემის) სტილები
+   ========================================== */
+body.light-mode {
+    background-color: #f4f6f9;
+    color: #02b3b9;
+}
+body.light-mode .navbar, 
+body.light-mode footer,
+body.light-mode .about-card,
+body.light-mode .course-card,
+body.light-mode .video-card,
+body.light-mode .filter-btn,
+body.light-mode .signup-form {
+    background-color: #ffffff; /* ყველა ბარათის და ბლოკის გათეთრება */
+    color: #1f2833;
+    border-color: #d1d8e0;
+}
+body.light-mode .video-card h3,
+body.light-mode .course-details h4,
+body.light-mode .signup-form h2 {
+    color: #1f2833;
+}
+body.light-mode .videos-section {
+    background-color: #eaedf2; /* ოდნავ ნაცრისფერი ფონი ვიდეო სექციას */
+}
+body.light-mode span {
+    color: #007780; /* ცისფერის ჩანაცვლება მუქი მწვანე/ლურჯით თვალისთვის საამებლად */
+}
+body.light-mode .btn, body.light-mode .signup-btn {
+    background-color: #007780;
+    color: #fff;
+}
+body.light-mode .signup-form input {
+    background-color: #f4f6f9;
+    border-color: #d1d8e0;
+    color: #1f2833;
+}
+body.light-mode .social-links a {
+    color: #1f2833;
+}
+body.light-mode .social-links a:hover {
+    color: #007780;
+}
+
+/* ==========================================
+   მედია ქუერი (რესპონსიულობა მობილურებისთვის)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* ელემენტები ლაგდება ვერტიკალურად სვეტად */
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 32px; /* სათაურის დაპატარავება პატარა ეკრანზე */
+    }
+    .nav-links {
+        flex-wrap: wrap; /* თუ ლინკები ვერ ეტევა მობილურზე, გადადიან მეორე ხაზზე */
+        justify-content: center;
+        gap: 10px;
+    }
+    .nav-links li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

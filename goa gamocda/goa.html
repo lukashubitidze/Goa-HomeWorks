@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ka"> <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>GOA Programming Academy</title> <link rel="stylesheet" href="goa.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img id="logo-img" src="GOA-2.png" alt="GOA Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#about">ჩვენ შესახებ</a></li>
+                <li><a href="#courses">კურსები</a></li>
+                <li><a href="#videos">ვიდეოები</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+                <li><button id="theme-toggle" class="theme-btn">🌙</button></li>
+                <li><button id="open-signup" class="signup-btn">Sign Up</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>გატეხე მატრიცა <span>GOA</span>-სთან ერთად</h1>
+            <p>შეისწავლე პროგრამირება ნულიდან, განავითარე "ჩადის" მენტალიტეტი და გახდი ინდუსტრიის ლიდერი.</p>
+            <a href="#courses" class="btn">დაიწყე ახლავე</a> </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>რატომ <span>GOA</span>?</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>ძლიერი კომუნა</h3>
+                <p>შენ ხდები იმ გარემოს ნაწილი, სადაც ყველა ერთმანეთს ეხმარება განვითარებაში.</p>
+            </div>
+            <div class="about-card">
+                <h3>პრაქტიკული სწავლება</h3>
+                <p>არანაირი მშრალი თეორია. მხოლოდ რეალური პროექტები და კოდირება პირველივე დღიდან.</p>
+            </div>
+            <div class="about-card">
+                <h3>დისციპლინა</h3>
+                <p>ჩვენ არ ვეძებთ მოტივაციას, ჩვენ ვავითარებთ დისციპლინას, რაც წარმატების მთავარი გასაღებია.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+        <h2>პოპულარული <span>მიმართულებები</span></h2>
+        <p class="info-text">(დააჭირე ბარათს დეტალების სანახავად)</p>
+        
+        <div class="courses-container">
+            <div class="course-card">
+                <h3>Front-End დეველოპმენტი</h3>
+                <p>HTML, CSS, JavaScript და React. შექმენი საიტების ვიზუალური მხარე.</p>
+                <span class="arrow">▼</span> <div class="course-details">
+                    <h4>რას ისწავლი ამ კურსზე?</h4>
+                    <ul>
+                        <li>სემანტიკური HTML-ის სტრუქტურას</li>
+                        <li>CSS ფლექსბოქსებს, გრიდებსა და ანიმაციებს</li>
+                        <li>JavaScript-ის ლოგიკას და DOM მანიპულაციას</li>
+                        <li>React.js - თანამედროვე ვებ-აპლიკაციების ასაწყობად</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <h3>Back-End დეველოპმენტი</h3>
+                <p>Python, ალგორითმები და მონაცემთა ბაზები. მართე საიტის ლოგიკა.</p>
+                <span class="arrow">▼</span>
+                
+                <div class="course-details">
+                    <h4>რას ისწავლი ამ კურსზე?</h4>
+                    <ul>
+                        <li>Python-ის სინტაქსს და ოპერატორებს</li>
+                        <li>ობიექტზე ორიენტირებულ პროგრამირებას (OOP)</li>
+                        <li>მონაცემთა ბაზებთან მუშაობას (SQL / PostgreSQL)</li>
+                        <li>API-ების შექმნას და სერვერის მართვას</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="videos" class="videos-section">
+        <h2>GOA <span>მედია სივრცე</span></h2>
+        <p class="info-text">უყურე და მიიღე მაქსიმალური განათლება</p>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">ყველა</button>
+            <button class="filter-btn" data-filter="motivation">მოტივაცია</button>
+            <button class="filter-btn" data-filter="coding">სიუჟეტი</button>
+        </div>
+
+        <div class="videos-container">
+            <div class="video-card" data-category="motivation" data-video-src="onlain.mp4">
+                <div class="video-thumbnail">
+                    <img src="https://pics.craiyon.com/2023-07-16/536c6d2d4ba44435b5fe22a3b781616d.webp" alt="GOA Motivation">
+                    <div class="play-icon">▶</div> </div>
+                <h3>ონლაინ გაცილებით სწრაფია!</h3>
+                <span class="tag">მოტივაცია</span>
+            </div>
+
+            <div class="video-card" data-category="coding" data-video-src="matrica.mp4">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/APg-_0_K6dc/hqdefault.jpg" alt="GOA Coding">
+                    <div class="play-icon">▶</div>
+                </div>
+                <h3>გაქცევა მატრიციდან!</h3>
+                <span class="tag">სიუჟეტი</span>
+            </div>
+
+            <div class="video-card" data-category="motivation" data-video-src="chil.mp4">
+                <div class="video-thumbnail">
+                    <img src="https://i.ytimg.com/vi/Lb8MBUOG3Cs/maxresdefault.jpg" alt="GOA Community">
+                    <div class="play-icon">▶</div>
+                </div>
+                <h3>chil guy შემოუერთდა GOA-ს (უფრო დამშვიდდა)</h3>
+                <span class="tag">მოტივაცია</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span> <iframe id="modalIframe" src="" frameborder="0" allowfullscreen></iframe> </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content signup-form">
+            <span class="close-signup">&times;</span> <h2>შექმენი <span>ექაუნთი</span></h2>
+            <form id="registration-form">
+                <input type="text" placeholder="სრული სახელი" required> <input type="email" placeholder="ელ-ფოსტა" required> <input type="password" placeholder="პაროლი" required> <button type="submit" class="btn">დარეგისტრირდი</button> </form>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="social-links">
+            <a href="https://www.facebook.com/nika11keshelava/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/goal_oriented_academy__goa/reel/C175X3rN-_P/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@Goal_Oriented_Academy__GOA" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2026 GOA Academy. ყველა უფლება დაცულია.</p>
+        <p>შემოგვიერთდი და შეცვალე მომავალი!</p>
+    </footer>
+
+    <script src="goa.js"></script> </body>
+</html>
